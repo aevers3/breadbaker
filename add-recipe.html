@@ -5,17 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
-    <div id="app">
-        <input v-model="flour" type="number" placeholder="flour">
-        <p>{{flour}}g Flour </p>
-        <input v-model="water" type="number" placeholder="water">
-        <p>{{water}}g Water </p>
-        <p v-on:click="">click</p>
+    <div id="app" class="flex flex-row">
+        <div class='left-container bg-orange-900 min-h-full w-6/12'>
+            <div class="flex m-4 flex-wrap">
+                <input v-model="flour" type="number" placeholder="flour" class="mx-4">
+                <p>{{flour}}g Flour </p>
+            </div>
+            <div class="flex m-4 flex-wrap">
+                <input v-on:keyup="calcHydration" v-model="water" type="number" placeholder="water" class="mx-4">
+                <p>{{water}}g Water </p>
+                <p> {{hydration}} </p>
+            </div>
+            <div class="flex m-4 flex-wrap">
+                <input v-on:keyup="calcSalt" v-model="salt" type="number" placeholder="water" class="mx-4">
+                <p>{{water}}g Salt </p>
+                <p> {{saltContent}} </p>
+            </div>
+            <div class="flex m-4 flex-wrap">
+                <input v-on:keyup="calcYeast" v-model="yeast" type="number" placeholder="water" class="mx-4">
+                <p>{{water}}g Yeast </p>
+                <p> {{yeastContent}} </p>
+            </div>
+        </div>
+
+        <div class='right-container bg-orange-300 min-h-screen w-6/12'>2</div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="addRecipeScripts.js"></script>
 </body>
 
