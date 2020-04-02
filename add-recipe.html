@@ -18,25 +18,26 @@
             </div>
             <div class="flex m-4 flex-wrap">
                 <input v-on:keyup="calcHydration" v-model="water" type="number" placeholder="water" class="mx-4">
-                <p>{{water}}g Water </p>
-                <p> {{hydration}} </p>
+                <p class=>{{water}}g Water </p>
+                <p class="mx-4"> {{hydration}} </p>
             </div>
             <div class="flex m-4 flex-wrap">
-                <input v-on:keyup="calcSalt" v-model="salt" type="number" placeholder="water" class="mx-4">
-                <p>{{water}}g Salt </p>
-                <p> {{saltContent}} </p>
+                <input v-on:keyup="calcSalt" v-model="salt" type="number" placeholder="salt" class="mx-4">
+                <p>{{salt}}g Salt </p>
+                <p class="mx-4"> {{saltContent}} </p>
             </div>
             <div class="flex m-4 flex-wrap">
-                <input v-on:keyup="calcYeast" v-model="yeast" type="number" placeholder="water" class="mx-4">
-                <p>{{water}}g Yeast </p>
-                <p> {{yeastContent}} </p>
+                <input v-on:keyup="calcYeast" v-model="yeast" type="number" placeholder="yeast" class="mx-4">
+                <p>{{yeast}}g Yeast </p>
+                <p class="mx-4"> {{yeastContent}} </p>
             </div>
         </div>
-
-        <div class='right-container bg-orange-300 min-h-screen w-6/12'>2</div>
+        <div class='right-container bg-orange-300 min-h-screen w-6/12'>
+            <a href="dough-builder.html" class="m-5">Dough Builder Tool</a>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="addRecipeScripts.js"></script>
+    <script src="js/addRecipeScripts.js"></script>
 </body>
 
 </html> 
