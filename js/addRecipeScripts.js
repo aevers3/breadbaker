@@ -16,11 +16,10 @@ window.onload = function () {
                 this.hydration = waterPercent + '%';
             },
             calcSalt: function () {
-                const saltPercent = this.formatPercent(this.salt / this.flour);
                 this.saltContent = saltPercent + '%';
             }, 
             calcYeast: function () {
-                const yeastPercent = (this.yeast / this.flour);
+                const yeastPercent = this.formatPercent(this.yeast / this.flour);
                 this.yeastContent = yeastPercent + '%';
             },
             formatPercent: function (decimal) {
