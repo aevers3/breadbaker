@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,37 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
-<body>
-    <div class='right-container bg-orange-300 min-h-screen '>
+
+<body class='bg-orange-300 p-4'>
+    <h1 class="text-4xl text-center">Dough Builder</h1>
+    <!-- Main container -->
+    <div id="app" class="container my-4 mx-auto bg-blue-200 grid grid-cols-3 gap-4">
+        <!-- Flour Block -->
+        <div class="col-span-2 bg-green-100 p-2">Flour</div>
+        <div class="col-span-1 bg-green-300 p-2 text-center">400g</div>
+        
+        <!-- Water Block -->
+        <div class="col-span-2 bg-green-100 p-2">Water</div>
+        <div class="col-span-1 bg-green-300 p-2 text-center">280g</div>
+        
+        <!-- Salt Block -->
+        <div class="col-span-2 bg-green-100 p-2">Salt</div>
+        <div class="col-span-1 bg-green-300 p-2 text-center">8g</div>
+        
+        <!-- Yeast Block -->
+        <div class="col-span-2 bg-green-100 p-2">Yeast</div>
+        <div class="col-span-1 bg-green-300 p-2 text-center">4g</div>
+        
+
+
+
+        <!-- <div class="slidecontainer">
+            <input type="range" min="50" max="100" value="70" class="slider" id="myRange">
+            <p>Hydration: <span id="demo"></span>%</p>
+        </div> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/addRecipeScripts.js"></script>
+    <script src="js/doughBuilderScripts.js"></script>
 </body>
+
 </html>

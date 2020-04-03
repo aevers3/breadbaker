@@ -1,0 +1,22 @@
+/**************** Dough Builder Slider *****************/
+.slidecontainer {
+    width: 40%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 20px;
+    outline: none;
+    background-color: blue;
+    border-radius: 12px
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 40px;
+    background-color: greenyellow;
+    border-radius: 50%;
+}
