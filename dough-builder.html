@@ -14,31 +14,51 @@
     <!-- Main container -->
     <div id="app" class="container my-4 mx-auto bg-blue-200 grid grid-cols-3 gap-4">
         <!-- Flour Block -->
-        <div class="col-span-2 bg-green-100 p-2">Flour</div>
-        <div class="col-span-1 bg-green-300 p-2 text-center">400g</div>
+        <div class="col-span-2 bg-green-100 p-2">
+            Flour
+            <p>How much flour do you want to use?</p>
+            <input v-model="flourEntered"  type="number" placeholder="Enter Number" />
+            <button v-on:click="submitFlour">Submit</button>
+        </div>
+        <div class="col-span-1 bg-green-300 p-2 text-center">
+            <span>{{flourDisplay}}g</span>
+        </div>
         
         <!-- Water Block -->
-        <div class="col-span-2 bg-green-100 p-2">Water</div>
-        <div class="col-span-1 bg-green-300 p-2 text-center">280g</div>
+        <div v-if="flourIsEntered" class="col-span-2 bg-green-100 p-2">
+            Water
+            <input v-model="waterEntered"  type="range" min="50" max="100" value="70" />
+            <p>Hydration: {{waterEntered}} %</p>
+            <button v-on:click="submitWater">Submit</button>
+        </div>
+        <div v-if="flourIsEntered" class="col-span-1 bg-green-300 p-2 text-center">
+            <span> {{waterDisplay}}g </span>
+        </div>
         
         <!-- Salt Block -->
-        <div class="col-span-2 bg-green-100 p-2">Salt</div>
-        <div class="col-span-1 bg-green-300 p-2 text-center">8g</div>
-        
+        <div v-if="flourIsEntered" class="col-span-2 bg-green-100 p-2">
+            Salt
+            <input v-model="saltEntered"  type="range" min="1" max="7" value="70" />
+            <p>Salt Content: {{saltEntered}} %</p>
+            <button v-on:click="submitSalt">Submit</button>
+        </div>
+        <div v-if="flourIsEntered" class="col-span-1 bg-green-300 p-2 text-center">
+            <span> {{saltDisplay}}g </span>
+        </div>
+       
+
         <!-- Yeast Block -->
-        <div class="col-span-2 bg-green-100 p-2">Yeast</div>
-        <div class="col-span-1 bg-green-300 p-2 text-center">4g</div>
-        
+        <div v-if="flourIsEntered" class="col-span-2 bg-green-100 p-2">Yeast</div>
+        <div v-if="flourIsEntered" class="col-span-1 bg-green-300 p-2 text-center">4g</div>
 
 
 
-        <!-- <div class="slidecontainer">
-            <input type="range" min="50" max="100" value="70" class="slider" id="myRange">
-            <p>Hydration: <span id="demo"></span>%</p>
-        </div> -->
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/doughBuilderScripts.js"></script>
+      
+
+      <script src="js/doughBuilderScripts.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </body>
 
 </html>
