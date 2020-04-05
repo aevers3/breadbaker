@@ -38,18 +38,25 @@
         <!-- Salt Block -->
         <div v-if="flourIsEntered" class="col-span-2 bg-green-100 p-2">
             Salt
-            <input v-model="saltEntered"  type="range" min="1" max="7" value="70" />
+            <input v-model="saltEntered"  type="range" min="1" max="3.5" value="2" step="0.1" />
             <p>Salt Content: {{saltEntered}} %</p>
             <button v-on:click="submitSalt">Submit</button>
         </div>
         <div v-if="flourIsEntered" class="col-span-1 bg-green-300 p-2 text-center">
             <span> {{saltDisplay}}g </span>
         </div>
-       
-
+        
+        
         <!-- Yeast Block -->
-        <div v-if="flourIsEntered" class="col-span-2 bg-green-100 p-2">Yeast</div>
-        <div v-if="flourIsEntered" class="col-span-1 bg-green-300 p-2 text-center">4g</div>
+        <div v-if="flourIsEntered" class="col-span-2 bg-green-100 p-2">
+            Yeast
+            <input v-model="yeastEntered"  type="range" min="0" max="3.5" value="1" step="0.1" />
+            <p>Yeast Content: {{yeastEntered}} %</p>
+            <button v-on:click="submitYeast">Submit</button>
+        </div>
+        <div v-if="flourIsEntered" class="col-span-1 bg-green-300 p-2 text-center">
+            <span> {{yeastDisplay}}g </span>
+        </div>
 
 
 

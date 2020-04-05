@@ -11,9 +11,10 @@ window.onload = function () {
       flourDisplay: '0',
       waterEntered: '70',
       waterDisplay: '0',
-      saltEntered: '',
-      saltDisplay: '',
-      yeast: '',
+      saltEntered: '2',
+      saltDisplay: '0',
+      yeastEntered: '1',
+      yeastDisplay: '0',
       flourIsEntered: true,
       flourSubmitClicked: false
     },
@@ -43,7 +44,12 @@ window.onload = function () {
         const percent = this.saltEntered / 100;
         const saltContent = Math.round(percent * this.flourEntered);
         this.saltDisplay = saltContent;
-      }
+      },
+      submitYeast: function () {
+        const percent = this.yeastEntered / 100;
+        const yeastContent = Math.round(percent * this.flourEntered);
+        this.yeastDisplay = yeastContent;
+      },
     }
   })
 }
