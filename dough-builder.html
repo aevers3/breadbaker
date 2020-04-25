@@ -17,8 +17,17 @@
         <div class="col-span-2 bg-green-100 p-2">
             Flour
             <p>How much flour do you want to use?</p>
-            <input v-model="flourEntered"  type="number" placeholder="Enter Number" />
-            <button v-on:click="submitFlour">Submit</button>
+            <input v-model="baseFlour"  type="number" placeholder="Enter Number" />
+            <button v-on:click="submitFlourAmount">Submit</button>
+            <!-- Flour Blender -->
+            <div v-if="flourIsEntered">
+                <p>Customize your flour blend!</p>
+                <ul>
+                    <flour-type v-for="addInFlour in addInFlours"></flour-type>
+                </ul>
+                <button @click="addNewFlour">Add Flour</button>
+                <button @click="submitFlourBlend">Submit Flour Blend</button>
+            </div>
         </div>
         <div class="col-span-1 bg-green-300 p-2 text-center">
             <span>{{flourDisplay}}g</span>
@@ -62,7 +71,7 @@
 
 
     </div>
-      
+
 
       <script src="js/doughBuilderScripts.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

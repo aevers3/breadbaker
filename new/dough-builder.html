@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dough Builder Tool</title>
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="css/style.css" type="text/css" /> -->
+</head>
+
+<body>
+    <div id="app">
+        <!-- Flour -->
+            <label for="baseFlourInput">How much flour do you want to use?</label>
+            <input id="baseFlourInput" placeholder="Enter Flour" type="number" v-model="baseFlour">
+            <h2 v-if="flourIsEntered"> {{ flourDisplay }} </h2>
+            <hr>
+            <!-- Water -->
+            <label for="waterInput">How much water do you want to use?</label>
+            <input id="waterInput" placeholder="Enter Water" type="number" v-model="waterEntered">
+            <div v-if="waterAndFlour">
+                <h3> {{ waterDisplay }} </h3>
+                <h3> {{ waterPercent }} </h3>
+            </div>
+            <hr>
+            <!-- Salt -->
+            <label for="saltInput">How much salt do you want to use?</label>
+            <input type="number" id="saltInput" placeholder="Enter Salt" v-model="saltEntered">
+            <div v-if="saltEntered">
+                <h3> {{ saltDisplay }} </h3>
+                <h3> {{ saltPercent }} </h3>
+            </div>
+                <hr>
+            <!-- Yeast -->
+            <label for="yeastInput">How much yeast do you want to use?</label>
+            <input type="number" id="yeastInput" placeholder="Enter Yeast" v-model="yeastEntered">
+            <div v-if="yeastEntered">
+                <h3> {{ yeastDisplay }} </h3>
+                <h3> {{ yeastPercent }} </h3>
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="doughBuilderScripts.js"></script>
+</body>
+
+</html>
