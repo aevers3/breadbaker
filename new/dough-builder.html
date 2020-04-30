@@ -14,21 +14,21 @@
         <!-- Flour -->
             <label for="baseFlourInput">How much flour do you want to use?</label>
             <input id="baseFlourInput" placeholder="Enter Flour" type="number" v-model="baseFlour">
-            <h2 v-if="flourIsEntered"> {{ flourDisplay }} </h2>
+            <h2 v-if="flourIsEntered"> {{ ingredientDisplay(this.baseFlour, 'Flour') }} </h2>
             <hr>
             <!-- Water -->
             <label for="waterInput">How much water do you want to use?</label>
             <input id="waterInput" placeholder="Enter Water" type="number" v-model="waterEntered">
             <div v-if="waterAndFlour">
-                <h3> {{ waterDisplay }} </h3>
+                <h3> {{ ingredientDisplay(this.waterEntered, 'Water') }} </h3>
                 <h3> {{ waterPercent }} </h3>
             </div>
             <hr>
             <!-- Salt -->
             <label for="saltInput">How much salt do you want to use?</label>
             <input type="number" id="saltInput" placeholder="Enter Salt" v-model="saltEntered">
-            <div v-if="saltEntered">
-                <h3> {{ saltDisplay }} </h3>
+            <div v-if="saltAndFlour">
+                <h3> {{ ingredientDisplay(this.saltEntered, 'Salt') }} </h3>
                 <h3> {{ saltPercent }} </h3>
             </div>
                 <hr>
@@ -36,7 +36,7 @@
             <label for="yeastInput">How much yeast do you want to use?</label>
             <input type="number" id="yeastInput" placeholder="Enter Yeast" v-model="yeastEntered">
             <div v-if="yeastEntered">
-                <h3> {{ yeastDisplay }} </h3>
+                <h3> {{ ingredientDisplay(this.yeastEntered, 'Yeast') }} </h3>
                 <h3> {{ yeastPercent }} </h3>
             </div>
     </div>

@@ -4,41 +4,41 @@ new Vue({
         baseFlour: '',
         waterEntered: '',
         saltEntered: '',
-        yeastEntered: ''
+        yeastEntered: '',
     },
     computed: {
-        flourDisplay: function() {
-            return this.baseFlour + 'g Flour';
-        },
         flourIsEntered: function() {
             return this.baseFlour.length > 0;
         },
-        waterDisplay: function() {
-            return this.waterEntered + 'g Water';
-        },
         waterPercent: function() {
-            const decimal = parseInt(this.waterEntered) / parseInt(this.baseFlour) * 100;
-            return decimal.toFixed(2) + '% Hydration';
+            return this.percentify(this.waterEntered) + '% Hydration';
         },
         waterAndFlour: function() {
-            return this.baseFlour.length > 0 && this.waterEntered.length > 0;
-        },
-        saltDisplay: function() {
-            return this.saltEntered + 'g Salt';
+            return this.checkForDisplay(this.waterEntered);
         },
         saltPercent: function() {
-            const decimal = parseInt(this.saltEntered) / parseInt(this.baseFlour) * 100;
-            return decimal.toFixed(2) + '% Salt';
+            return this.percentify(this.saltEntered) + '% Salt';
         },
-        saltandFlour: function() {
-            return this.baseFlour.length > 0 && this.saltEntered.length > 0;
-        },
-        yeastDisplay: function() {
-            return this.yeastEntered + 'g Yeast';
+        saltAndFlour: function() {
+            return this.checkForDisplay(this.saltEntered);
         },
         yeastPercent: function() {
-            const decimal = parseInt(this.waterEntered) / parseInt(this.baseFlour) * 100;
-            return decimal.toFixed(2) + '% Yeast'
+            return this.percentify(this.yeastEntered) + '% Yeast';
+        },
+        yeastAndFlour: function() {
+            return this.checkForDisplay(this.yeastEntered);
+        },       
+    },
+    methods: {
+        percentify: function(value) {
+            const decimal = parseInt(value) / parseInt(this.baseFlour) * 100;
+            return decimal.toFixed(2)
+        },
+        checkForDisplay: function(ingredient) {
+            return this.baseFlour.length > 0 && ingredient.length > 0;
+        },
+        ingredientDisplay: function(amount, ingredient) {
+            return `${amount}g ${ingredient}`
         }
     }
 })
